@@ -41,3 +41,5 @@ To build, you must have make installed in your OS, and run:
 If you want to install, first make and run:
 
     make install
+
+* Note: maybe you should run with superuser privileges, for example: ````sudo make install````
