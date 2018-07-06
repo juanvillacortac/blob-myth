@@ -721,7 +721,7 @@ aarena:
  ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    
  ░ ░                           ░                  ░      
 
-[*]You're not the chosen one weak, wanderer...
+[*]You're not the chosen one, wanderer...
 			)" << endl;
 			//cout << "Type [1] to continue" << endl;
 			//cin >> input;
