@@ -32,7 +32,6 @@
 </pre>
 
 # The Myth of Blob - a simple terminal RPG
-## A simple terminal RPG
 
 To build, you must have make installed in your OS, and run:
 
