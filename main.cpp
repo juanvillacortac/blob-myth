@@ -501,6 +501,7 @@ setup:
 	cout << "Hello there, what is your name?" << endl;
 	cin >> input;
 	name = input;
+	clear();
 	cout << "Ahh, is it " << input << "? [y/n]" << endl;
 	cin >> input;
 	if (input == "n") {
@@ -510,7 +511,7 @@ setup:
 
 	// Class Setup
 csetup:
-	cout << endl;
+	clear();
 	cout << "Choose your Class" << endl;
 	cout << "=================" << endl;
 	cout << "[1] Champion" << endl;
@@ -530,7 +531,7 @@ csetup:
 		piclass = 3;
 	} else if (input == "4") {
 		pclass = "Cleric";
-		piclass =4;
+		piclass = 4;
 	}
 
 	goto menue;
@@ -546,22 +547,20 @@ menue:
 	}
 
 	cout << R"(
-___  ___ _____ _   _ _   _ 
-|  \/  ||  ___| \ | | | | |
-| .  . || |__ |  \| | | | |
-| |\/| ||  __|| . ` | | | |
-| |  | || |___| |\  | |_| |
-\_|  |_/\____/\_| \_/\___/
+       __, _,____,_,  _,_, _,
+ ____,(-|\/|(-|_,(-|\ |(-|  \ ____, 
+(      _| _|,_|__,_| \|,_|__/(
+      (     (    (     (
     )" << endl;
 
 		cout << pclass << " " << name << endl;
-	cout << "[1] Traveller's Encounter" << endl;
-	cout << "[2] Inventory" << endl;
-	cout << "[3] Rest (Returns you to full health/mana)" << endl;
-	cout << "[4] Assign Skillpoints [" << skill << " available]" << endl;
-	cout << "[5] Shop" << endl;
-	cout << "[6] Questhall" << endl;
-	cout << "[7] Dungeons" << endl;
+	cout << "[1]  Traveller's Encounter" << endl;
+	cout << "[2]  Inventory" << endl;
+	cout << "[3]  Rest (Returns you to full health/mana)" << endl;
+	cout << "[4]  Assign Skillpoints [" << skill << " available]" << endl;
+	cout << "[5]  Shop" << endl;
+	cout << "[6]  Quest hall" << endl;
+	cout << "[7]  Dungeons" << endl;
 	cout << "[98] Save Game" << endl;
 	cout << "[99] Exit" << endl;
 	cin >> input;
@@ -677,12 +676,12 @@ aarena:
 
 	clear();
 	draw(etype);
-	cout << "[" << etype << " " << elevel << "] >>> " << ehp << "/" << mehp << endl;
-	cout << "[" << name << " " << level << "] >>> " << hp << "/" << mhp << endl;
+	cout << "[" << etype << " lvl " << elevel << "] >>> " << ehp << "/" << mehp << endl;
+	cout << "[" << name << " lvl " << level << "] >>> " << hp << "/" << mhp << endl;
 	cout << "-Mana- >>> " << mana << "/" << mmana << endl;
-	cout << "[1] Attack" << endl;
-	cout << "[2] Do ability" << endl;
-	cout << "[3] Inventory" << endl;
+	cout << "[1]  Attack" << endl;
+	cout << "[2]  Do ability" << endl;
+	cout << "[3]  Inventory" << endl;
 	cout << "[99] Flee" << endl;
 	cin >> input;
 
@@ -692,6 +691,12 @@ aarena:
 		// If enemy ehp < 0 then
 		if (ehp <= 0) {
 			clear();
+			cout << R"(
+ __  _,__, ____,____,____, ____, _  _,
+(-\  /(-| (-/  (-|  (-/  \(-|__)(-\_/
+  _\/  _|_,_\__,_|,  _\__/,_|  \, _|,
+ (    (   (    (    (     (      (
+			)" << endl;
 			cout << "[*] You killed the " << etype << endl;
 			cout << "Type [1] to continue" << endl;
 			cin >> input;
@@ -747,7 +752,7 @@ iarena:
 	clear();
 
 	cout << "Inventory" << endl;
-	cout << "[1] Health Potion, " << hpotion << " (Heals you to max health)" << endl;
+	cout << "[1]  Health Potion, " << hpotion << " (Heals you to max health)" << endl;
 	cout << "[99] Exit" << endl;
 	cin >> input;
 	if (input == "1") {
@@ -857,13 +862,27 @@ darena:
 	// If player hp < 0 then
 	if (hp <= 0) {
 		clear();
-		cout << "[*] You Died" << endl;
-		cout << "Type [1] to continue" << endl;
-		cin >> input;
-		if (status != "arena") {
-			status = "arena";
-		}
-		goto menue;
+		cout << R"(
+▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ 
+ ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌
+  ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌
+  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌
+  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓ 
+   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒ 
+ ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ 
+ ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ 
+ ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    
+ ░ ░                           ░                  ░      
+
+[*]You're not the chosen one, wanderer...
+			)" << endl;
+			//cout << "Type [1] to continue" << endl;
+			//cin >> input;
+			if (status != "arena") {
+				status = "arena";
+			}
+			//goto menue;
+			exit(0);
 	}
 	goto aarena;
 
@@ -959,13 +978,13 @@ inventory2:
 	cout << "[Gold] >>> " << gold << endl;
 	cout << "[Healing Potions] >>> " << hpotion << endl;
 	cout << "==================================" << endl;
-	cout << "Head- " << head << endl;
-	cout << "Chest- " << chest << endl;
-	cout << "Legs- " << legs << endl;
-	cout << "Feet- " << feet << endl;
+	cout << "Head  - " << head << endl;
+	cout << "Chest - " << chest << endl;
+	cout << "Legs  - " << legs << endl;
+	cout << "Feet  - " << feet << endl;
 	cout << "==================================" << endl;
-	cout << "1- Armory" << endl;
-	cout << "99- Exit" << endl;
+	cout << "[1]  Armory" << endl;
+	cout << "[99] Exit" << endl;
 	cin >> input;
 	if (input == "99") {
 		goto menue;
@@ -991,7 +1010,7 @@ armory:
        | `""`  /   ^^  |   ':'   |
     )" << endl;
 
-		cout << "1- Slimy Chestplate >>> [10% HP Increase] ";
+		cout << "1-  Slimy Chestplate >>> [10% HP Increase] ";
 	if (slimychestplate == 1) {
 		cout << ">>> [Owned] ";
 		if (chest == "slimychestplate") {
@@ -1003,7 +1022,7 @@ armory:
 		cout << endl;
 	}
 
-	cout << "2- Slimy Helmet >>> [5% HP Increase] ";
+	cout << "2-  Slimy Helmet >>> [5% HP Increase] ";
 	if (slimyhelmet == 1) {
 		cout << ">>> [Owned] ";
 		if (head == "slimyhelmet") {
@@ -1015,7 +1034,7 @@ armory:
 		cout << endl;
 	}
 
-	cout << "3- Blob Legplates >>> [15% HP Increase] ";
+	cout << "3-  Blob Legplates >>> [15% HP Increase] ";
 	if (bloblegplates == 1) {
 		cout << ">>> [Owned] ";
 		if (legs == "bloblegplates") {
@@ -1027,7 +1046,7 @@ armory:
 		cout << endl;
 	}
 
-	cout << "4- Blob Boots >>> [10% HP Increase] ";
+	cout << "4-  Blob Boots >>> [10% HP Increase] ";
 	if (blobboots == 1) {
 		cout << ">>> [Owned] ";
 		if (feet == "blobboots") {
@@ -1123,9 +1142,9 @@ askill:
     )" << endl; // Bedtime stories?
 
 		cout << "Available Skillpoints [" << skill << "]" << endl;
-	cout << "1- Strength [" << stre << "]" << endl;
-	cout << "2- Intelligence [" << inte << "]" << endl;
-	cout << "3- Dexterity [" << dext << "]" << endl;
+	cout << "1-  Strength [" << stre << "]" << endl;
+	cout << "2-  Intelligence [" << inte << "]" << endl;
+	cout << "3-  Dexterity [" << dext << "]" << endl;
 	cout << "99- Exit" << endl;
 	cin >> input;
 	if (skill > 0) {
@@ -1175,7 +1194,7 @@ shop:
 
 		price = level*5;
 	cout << "[Gold] >>> " << gold << endl;
-	cout << "1- Health Potion (" << price << " gold)" << endl;
+	cout << "1-  Health Potion (" << price << " gold)" << endl;
 	cout << "99- Exit" << endl;
 	cin >> input;
 	if (input == "1") {
@@ -1330,8 +1349,8 @@ dungeonmenue:
     )" << endl;
 
 		cout << "Available Dungeons" << endl;
-	cout << "[1] The Slime Lair >>> [150 Gold, Blob Gear]" << endl;
-	cout << "[99] Return to Menue" << endl;
+	cout << "[1]  The Slime Lair >>> [150 Gold, Blob Gear]" << endl;
+	cout << "[99] Return to Menu" << endl;
 	cin >> input;
 	if (input == "99") {
 		goto menue;
@@ -1365,8 +1384,8 @@ slimedung:
 			goto slimedungc;
 		}
 
-	cout << "[1] Continue [" << ckills << "/" << rkills << " slimes killed]" << endl;
-	cout << "[2] Adrenalin (Heals all missing hp/mana)" << endl;
+	cout << "[1]  Continue [" << ckills << "/" << rkills << " slimes killed]" << endl;
+	cout << "[2]  Adrenaline (Heals all missing hp/mana)" << endl;
 	cout << "[99] Exit" << endl;
 	cin >> input;
 	if (input == "1") {
@@ -1420,7 +1439,7 @@ slimedungc:
 			blobboots = 1;
 			break;
 	}
-	cout << "Type [1] to return to the menue" << endl;
+	cout << "Type [1] to return to the menu" << endl;
 	cin >> input;
 	goto menue;
 
