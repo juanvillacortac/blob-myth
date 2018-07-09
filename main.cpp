@@ -167,11 +167,12 @@ pair<string, int> getability(string pclass, int mana, int inte, int level) {
 	cout << "Choose an ability" << endl;
 	if (pclass == "Champion") { // Champion Section
 		cost = inte*(level);
-		cout << "[1] Cleaving Strike [" << cost << " mana]" << endl;
-		cout << "[2] Melting Thrust [" << cost << " mana]" << endl;
-		cout << "[3] Critical Bash [" << cost << " mana]" << endl;
+		cout << "[1]  Cleaving Strike [" << cost << " mana]" << endl;
+		cout << "[2]  Melting Thrust [" << cost << " mana]" << endl;
+		cout << "[3]  Critical Bash [" << cost << " mana]" << endl;
 		cost = inte*(level+1);
-		cout << "[4] Purify [" << cost << " mana]" << endl;
+		cout << "[4]  Purify [" << cost << " mana]" << endl;
+		cout << "[99] Go back" << endl;
 		cost = inte*(level);
 		cin >> input;
 		if (input == "1") {
@@ -217,11 +218,12 @@ pair<string, int> getability(string pclass, int mana, int inte, int level) {
 		}
 	} else if (pclass == "Necromancer") { // Necromancer Section
 		cost = inte*(level);
-		cout << "[1] Shadow Strike [" << cost << " mana]" << endl;
-		cout << "[2] Cripple [" << cost << " mana]" << endl;
-		cout << "[3] Mutilate [" << cost << " mana]" << endl;
+		cout << "[1]  Shadow Strike [" << cost << " mana]" << endl;
+		cout << "[2]  Cripple [" << cost << " mana]" << endl;
+		cout << "[3]  Mutilate [" << cost << " mana]" << endl;
 		cost = inte*(level+2);
-		cout << "[4] Life Tap [" << cost << " mana]" << endl;
+		cout << "[4]  Life Tap [" << cost << " mana]" << endl;
+		cout << "[99] Go back" << endl;
 		cost = inte*(level);
 		cin >> input;
 		if (input == "1") {
@@ -267,11 +269,12 @@ pair<string, int> getability(string pclass, int mana, int inte, int level) {
 		}
 	} else if (pclass == "Assassin") { // Assassin Section
 		cost = inte*(level);
-		cout << "[1] Back Stab [" << cost << " mana]" << endl;
-		cout << "[2] Headcrack [" << cost << " mana]" << endl;
-		cout << "[3] Poison [" << cost << " mana]" << endl;
+		cout << "[1]  Back Stab [" << cost << " mana]" << endl;
+		cout << "[2]  Headcrack [" << cost << " mana]" << endl;
+		cout << "[3]  Poison [" << cost << " mana]" << endl;
 		cost = inte*10;
-		cout << "[4] Assassinate [" << cost << " mana]" << endl;
+		cout << "[4]  Assassinate [" << cost << " mana]" << endl;
+		cout << "[99] Go back" << endl;
 		cost = inte*(level);
 		cin >> input;
 		if (input == "1") {
@@ -317,10 +320,11 @@ pair<string, int> getability(string pclass, int mana, int inte, int level) {
 		}
 	}else if (pclass == "Cleric") { // Cleric Section
 		cost = inte*(level);
-		cout << "[1] Smite [" << cost << " mana]" << endl;
-		cout << "[2] Enflame [" << cost << " mana]" << endl;
-		cout << "[3] Atonement [" << cost << " mana]" << endl;
-		cout << "[4] Flash Heal [" << cost << " mana]" << endl;
+		cout << "[1]  Smite [" << cost << " mana]" << endl;
+		cout << "[2]  Enflame [" << cost << " mana]" << endl;
+		cout << "[3]  Atonement [" << cost << " mana]" << endl;
+		cout << "[4]  Flash Heal [" << cost << " mana]" << endl;
+		cout << "[99] Go back" << endl;
 		cin >> input;
 		if (input == "1") {
 			ability = "smite";
