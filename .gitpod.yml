@@ -5,8 +5,6 @@ tasks:
       gp sync-done make
     command: rails server
   - name: The Myth of Blob
-    openMode: split-right
-    init: make
-    command: |
-      gp sync-await make
-      ./blobmyth
+    openMode: tab-after
+    init: gp sync-await make
+    command: ./blobmyth
