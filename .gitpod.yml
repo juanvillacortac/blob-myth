@@ -1,4 +1,5 @@
 tasks:
-  - init: make && ./blobmyth
-
-
+  - name: The Myth of Blob
+    init: make
+    command: ./blobmyth
+    openMode: split-right
